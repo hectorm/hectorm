@@ -11,6 +11,8 @@ on:
     - cron: '55 05 * * *'
   workflow_dispatch:
 
+permissions: {}
+
 concurrency:
   group: '${{ github.ref }}'
   cancel-in-progress: true
@@ -22,7 +24,7 @@ jobs:
     runs-on: 'ubuntu-latest'
     permissions: {}
     steps:
-      - uses: 'lowlighter/metrics@v3.23'
+      - uses: 'lowlighter/metrics@58025c0755c249c0a7c0ed5d8f5b8848e1bfb374'
         with:
           # Core
           config_animations: true
@@ -40,7 +42,7 @@ jobs:
           # Base
           base: 'header'
       - name: 'Upload artifacts'
-        uses: 'actions/upload-artifact@v3'
+        uses: 'actions/upload-artifact@3cea5372237819ed00197afe530f5a7ea3e805c8'
         with:
           name: 'metrics'
           path: '/metrics_renders/'
@@ -51,7 +53,7 @@ jobs:
     runs-on: 'ubuntu-latest'
     permissions: {}
     steps:
-      - uses: 'lowlighter/metrics@v3.23'
+      - uses: 'lowlighter/metrics@58025c0755c249c0a7c0ed5d8f5b8848e1bfb374'
         with:
           # Core
           config_animations: true
@@ -71,7 +73,7 @@ jobs:
           repositories: 200
           repositories_forks: false
       - name: 'Upload artifacts'
-        uses: 'actions/upload-artifact@v3'
+        uses: 'actions/upload-artifact@3cea5372237819ed00197afe530f5a7ea3e805c8'
         with:
           name: 'metrics'
           path: '/metrics_renders/'
@@ -82,7 +84,7 @@ jobs:
     runs-on: 'ubuntu-latest'
     permissions: {}
     steps:
-      - uses: 'lowlighter/metrics@v3.23'
+      - uses: 'lowlighter/metrics@58025c0755c249c0a7c0ed5d8f5b8848e1bfb374'
         with:
           # Core
           config_animations: true
@@ -105,7 +107,7 @@ jobs:
           plugin_achievements_secrets: true
           plugin_achievements_threshold: 'B'
       - name: 'Upload artifacts'
-        uses: 'actions/upload-artifact@v3'
+        uses: 'actions/upload-artifact@3cea5372237819ed00197afe530f5a7ea3e805c8'
         with:
           name: 'metrics'
           path: '/metrics_renders/'
@@ -116,7 +118,7 @@ jobs:
     runs-on: 'ubuntu-latest'
     permissions: {}
     steps:
-      - uses: 'lowlighter/metrics@v3.23'
+      - uses: 'lowlighter/metrics@58025c0755c249c0a7c0ed5d8f5b8848e1bfb374'
         with:
           # Core
           config_animations: true
@@ -144,7 +146,7 @@ jobs:
           plugin_languages_sections: 'most-used'
           plugin_languages_threshold: '0%'
       - name: 'Upload artifacts'
-        uses: 'actions/upload-artifact@v3'
+        uses: 'actions/upload-artifact@3cea5372237819ed00197afe530f5a7ea3e805c8'
         with:
           name: 'metrics'
           path: '/metrics_renders/'
@@ -155,7 +157,7 @@ jobs:
     runs-on: 'ubuntu-latest'
     permissions: {}
     steps:
-      - uses: 'lowlighter/metrics@v3.23'
+      - uses: 'lowlighter/metrics@58025c0755c249c0a7c0ed5d8f5b8848e1bfb374'
         with:
           # Core
           config_animations: true
@@ -179,7 +181,7 @@ jobs:
           plugin_notable_repositories: true
           plugin_notable_types: 'commit'
       - name: 'Upload artifacts'
-        uses: 'actions/upload-artifact@v3'
+        uses: 'actions/upload-artifact@3cea5372237819ed00197afe530f5a7ea3e805c8'
         with:
           name: 'metrics'
           path: '/metrics_renders/'
@@ -199,11 +201,11 @@ jobs:
       contents: 'write'
     steps:
       - name: 'Checkout'
-        uses: 'actions/checkout@v3'
+        uses: 'actions/checkout@d0651293c4a5a52e711f25b41b05b2212f385d28'
         with:
           ref: '${{ github.ref }}'
       - name: 'Download artifacts'
-        uses: 'actions/download-artifact@v3'
+        uses: 'actions/download-artifact@fb598a63ae348fa914e94cd0ff38f362e927b741'
         with:
           name: 'metrics'
           path: './metrics/'
