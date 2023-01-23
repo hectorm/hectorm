@@ -24,7 +24,7 @@ jobs:
     runs-on: 'ubuntu-latest'
     permissions: {}
     steps:
-      - uses: 'lowlighter/metrics@c1240845bc6547ad60bfcf8d26838c82be83d573'
+      - uses: 'lowlighter/metrics@3dd06164327476b9730a815a70ad39cbf5032f7e'
         with:
           # Core
           config_animations: true
@@ -53,7 +53,7 @@ jobs:
     runs-on: 'ubuntu-latest'
     permissions: {}
     steps:
-      - uses: 'lowlighter/metrics@c1240845bc6547ad60bfcf8d26838c82be83d573'
+      - uses: 'lowlighter/metrics@3dd06164327476b9730a815a70ad39cbf5032f7e'
         with:
           # Core
           config_animations: true
@@ -84,7 +84,7 @@ jobs:
     runs-on: 'ubuntu-latest'
     permissions: {}
     steps:
-      - uses: 'lowlighter/metrics@c1240845bc6547ad60bfcf8d26838c82be83d573'
+      - uses: 'lowlighter/metrics@3dd06164327476b9730a815a70ad39cbf5032f7e'
         with:
           # Core
           config_animations: true
@@ -118,7 +118,7 @@ jobs:
     runs-on: 'ubuntu-latest'
     permissions: {}
     steps:
-      - uses: 'lowlighter/metrics@c1240845bc6547ad60bfcf8d26838c82be83d573'
+      - uses: 'lowlighter/metrics@3dd06164327476b9730a815a70ad39cbf5032f7e'
         with:
           # Core
           config_animations: true
@@ -157,7 +157,7 @@ jobs:
     runs-on: 'ubuntu-latest'
     permissions: {}
     steps:
-      - uses: 'lowlighter/metrics@c1240845bc6547ad60bfcf8d26838c82be83d573'
+      - uses: 'lowlighter/metrics@3dd06164327476b9730a815a70ad39cbf5032f7e'
         with:
           # Core
           config_animations: true
