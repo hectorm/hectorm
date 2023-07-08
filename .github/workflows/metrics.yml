@@ -189,7 +189,7 @@ jobs:
 
   publish-metrics:
     name: 'Publish metrics'
-    if: "github.ref == 'refs/heads/master'"
+    if: "github.event_name != 'pull_request'"
     needs:
       - 'generate-header-metrics'
       - 'generate-repositories-metrics'
@@ -216,5 +216,5 @@ jobs:
           if [ -n "$(git status --porcelain=v1 ./metrics/)" ]; then
             git add ./metrics/
             git commit -m "[skip ci] Metrics $(date -Iseconds)"
-            git push
+            git push origin HEAD
           fi
