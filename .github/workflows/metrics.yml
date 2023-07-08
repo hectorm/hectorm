@@ -29,6 +29,7 @@ jobs:
           # Core
           config_animations: true
           config_base64: true
+          config_padding: '0, 20'
           config_display: 'regular'
           config_output: 'svg'
           config_timezone: 'UTC'
@@ -58,6 +59,7 @@ jobs:
           # Core
           config_animations: true
           config_base64: true
+          config_padding: '0, 30'
           config_display: 'regular'
           config_output: 'svg'
           config_timezone: 'UTC'
@@ -89,6 +91,7 @@ jobs:
           # Core
           config_animations: true
           config_base64: true
+          config_padding: '0, 20'
           config_display: 'regular'
           config_output: 'svg'
           config_timezone: 'UTC'
@@ -123,6 +126,7 @@ jobs:
           # Core
           config_animations: true
           config_base64: true
+          config_padding: '0, 20'
           config_display: 'regular'
           config_output: 'svg'
           config_timezone: 'UTC'
@@ -162,6 +166,7 @@ jobs:
           # Core
           config_animations: true
           config_base64: true
+          config_padding: '0, 40'
           config_display: 'regular'
           config_output: 'svg'
           config_timezone: 'UTC'
