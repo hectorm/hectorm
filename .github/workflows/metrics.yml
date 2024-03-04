@@ -210,27 +210,27 @@ jobs:
         with:
           ref: '${{ github.ref }}'
       - name: 'Download header metrics artifact'
-        uses: 'actions/download-artifact@eaceaf801fd36c7dee90939fad912460b18a1ffe'
+        uses: 'actions/download-artifact@c850b930e6ba138125429b7e5c93fc707a7f8427'
         with:
           name: 'header-metrics'
           path: './metrics/'
       - name: 'Download repositories metrics artifact'
-        uses: 'actions/download-artifact@eaceaf801fd36c7dee90939fad912460b18a1ffe'
+        uses: 'actions/download-artifact@c850b930e6ba138125429b7e5c93fc707a7f8427'
         with:
           name: 'repositories-metrics'
           path: './metrics/'
       - name: 'Download achievements plugin metrics artifact'
-        uses: 'actions/download-artifact@eaceaf801fd36c7dee90939fad912460b18a1ffe'
+        uses: 'actions/download-artifact@c850b930e6ba138125429b7e5c93fc707a7f8427'
         with:
           name: 'plugin-achievements-metrics'
           path: './metrics/'
       - name: 'Download languages plugin metrics artifact'
-        uses: 'actions/download-artifact@eaceaf801fd36c7dee90939fad912460b18a1ffe'
+        uses: 'actions/download-artifact@c850b930e6ba138125429b7e5c93fc707a7f8427'
         with:
           name: 'plugin-languages-metrics'
           path: './metrics/'
       - name: 'Download notable contributions plugin metrics artifact'
-        uses: 'actions/download-artifact@eaceaf801fd36c7dee90939fad912460b18a1ffe'
+        uses: 'actions/download-artifact@c850b930e6ba138125429b7e5c93fc707a7f8427'
         with:
           name: 'plugin-notable-metrics'
           path: './metrics/'
