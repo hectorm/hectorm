@@ -1,240 +1,240 @@
-name: 'Metrics'
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
+name: "Metrics"
 
 on:
   push:
-    branches: ['*']
-    paths: ['.github/workflows/metrics.yml']
+    branches: ["*"]
+    paths: [".github/workflows/metrics.yml"]
   pull_request:
-    branches: ['*']
-    paths: ['.github/workflows/metrics.yml']
+    branches: ["*"]
+    paths: [".github/workflows/metrics.yml"]
   schedule:
-    - cron: '55 05 * * *'
+    - cron: "55 05 * * *"
   workflow_dispatch:
 
 permissions: {}
 
 concurrency:
-  group: '${{ github.ref }}'
+  group: "${{ github.ref }}"
   cancel-in-progress: true
 
 jobs:
-
   generate-header-metrics:
-    name: 'Generate header metrics'
-    runs-on: 'ubuntu-latest'
+    name: "Generate header metrics"
+    runs-on: "ubuntu-latest"
     permissions: {}
     steps:
-      - uses: 'lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6'
+      - uses: "lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6"
         with:
           # Core
           config_animations: true
           config_base64: true
-          config_padding: '0, 20'
-          config_display: 'regular'
-          config_output: 'svg'
-          config_timezone: 'UTC'
-          experimental_features: '--optimize-svg'
-          filename: 'header.*'
-          optimize: 'css, xml, svg'
-          output_action: 'none'
-          template: 'classic'
-          token: '${{ secrets.METRICS_TOKEN }}'
-          user: '${{ github.repository_owner }}'
+          config_padding: "0, 20"
+          config_display: "regular"
+          config_output: "svg"
+          config_timezone: "UTC"
+          experimental_features: "--optimize-svg"
+          filename: "header.*"
+          optimize: "css, xml, svg"
+          output_action: "none"
+          template: "classic"
+          token: "${{ secrets.METRICS_TOKEN }}"
+          user: "${{ github.repository_owner }}"
           # Base
-          base: 'header'
-      - name: 'Upload artifact'
-        uses: 'actions/upload-artifact@0b2256b8c012f0828dc542b3febcab082c67f72b'
+          base: "header"
+      - name: "Upload artifact"
+        uses: "actions/upload-artifact@0b2256b8c012f0828dc542b3febcab082c67f72b"
         with:
-          name: 'header-metrics'
-          path: '/metrics_renders/'
+          name: "header-metrics"
+          path: "/metrics_renders/"
           retention-days: 1
 
   generate-repositories-metrics:
-    name: 'Generate repositories metrics'
-    runs-on: 'ubuntu-latest'
+    name: "Generate repositories metrics"
+    runs-on: "ubuntu-latest"
     permissions: {}
     steps:
-      - uses: 'lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6'
+      - uses: "lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6"
         with:
           # Core
           config_animations: true
           config_base64: true
-          config_padding: '0, 30'
-          config_display: 'regular'
-          config_output: 'svg'
-          config_timezone: 'UTC'
-          experimental_features: '--optimize-svg'
-          filename: 'repositories.*'
-          optimize: 'css, xml, svg'
-          output_action: 'none'
-          template: 'classic'
-          token: '${{ secrets.METRICS_TOKEN }}'
-          user: '${{ github.repository_owner }}'
+          config_padding: "0, 30"
+          config_display: "regular"
+          config_output: "svg"
+          config_timezone: "UTC"
+          experimental_features: "--optimize-svg"
+          filename: "repositories.*"
+          optimize: "css, xml, svg"
+          output_action: "none"
+          template: "classic"
+          token: "${{ secrets.METRICS_TOKEN }}"
+          user: "${{ github.repository_owner }}"
           # Base
-          base: 'repositories'
+          base: "repositories"
           repositories: 200
           repositories_forks: false
-      - name: 'Upload artifact'
-        uses: 'actions/upload-artifact@0b2256b8c012f0828dc542b3febcab082c67f72b'
+      - name: "Upload artifact"
+        uses: "actions/upload-artifact@0b2256b8c012f0828dc542b3febcab082c67f72b"
         with:
-          name: 'repositories-metrics'
-          path: '/metrics_renders/'
+          name: "repositories-metrics"
+          path: "/metrics_renders/"
           retention-days: 1
 
   generate-plugin-achievements-metrics:
-    name: 'Generate achievements plugin metrics'
-    runs-on: 'ubuntu-latest'
+    name: "Generate achievements plugin metrics"
+    runs-on: "ubuntu-latest"
     permissions: {}
     steps:
-      - uses: 'lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6'
+      - uses: "lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6"
         with:
           # Core
           config_animations: true
           config_base64: true
-          config_padding: '0, 20'
-          config_display: 'regular'
-          config_output: 'svg'
-          config_timezone: 'UTC'
-          experimental_features: '--optimize-svg'
-          filename: 'plugin-achievements.*'
-          optimize: 'css, xml, svg'
-          output_action: 'none'
-          template: 'classic'
-          token: '${{ secrets.METRICS_TOKEN }}'
-          user: '${{ github.repository_owner }}'
+          config_padding: "0, 20"
+          config_display: "regular"
+          config_output: "svg"
+          config_timezone: "UTC"
+          experimental_features: "--optimize-svg"
+          filename: "plugin-achievements.*"
+          optimize: "css, xml, svg"
+          output_action: "none"
+          template: "classic"
+          token: "${{ secrets.METRICS_TOKEN }}"
+          user: "${{ github.repository_owner }}"
           # Base
-          base: ''
+          base: ""
           # Achievements plugin
           plugin_achievements: true
-          plugin_achievements_display: 'compact'
+          plugin_achievements_display: "compact"
           plugin_achievements_secrets: true
-          plugin_achievements_threshold: 'B'
-      - name: 'Upload artifact'
-        uses: 'actions/upload-artifact@0b2256b8c012f0828dc542b3febcab082c67f72b'
+          plugin_achievements_threshold: "B"
+      - name: "Upload artifact"
+        uses: "actions/upload-artifact@0b2256b8c012f0828dc542b3febcab082c67f72b"
         with:
-          name: 'plugin-achievements-metrics'
-          path: '/metrics_renders/'
+          name: "plugin-achievements-metrics"
+          path: "/metrics_renders/"
           retention-days: 1
 
   generate-plugin-languages-metrics:
-    name: 'Generate languages plugin metrics'
-    runs-on: 'ubuntu-latest'
+    name: "Generate languages plugin metrics"
+    runs-on: "ubuntu-latest"
     permissions: {}
     steps:
-      - uses: 'lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6'
+      - uses: "lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6"
         with:
           # Core
           config_animations: true
           config_base64: true
-          config_padding: '0, 20'
-          config_display: 'regular'
-          config_output: 'svg'
-          config_timezone: 'UTC'
-          experimental_features: '--optimize-svg'
-          filename: 'plugin-languages.*'
-          optimize: 'css, xml, svg'
-          output_action: 'none'
-          template: 'classic'
-          token: '${{ secrets.METRICS_TOKEN }}'
-          user: '${{ github.repository_owner }}'
+          config_padding: "0, 20"
+          config_display: "regular"
+          config_output: "svg"
+          config_timezone: "UTC"
+          experimental_features: "--optimize-svg"
+          filename: "plugin-languages.*"
+          optimize: "css, xml, svg"
+          output_action: "none"
+          template: "classic"
+          token: "${{ secrets.METRICS_TOKEN }}"
+          user: "${{ github.repository_owner }}"
           # Base
-          base: ''
+          base: ""
           # Languages plugin
           plugin_languages: true
           plugin_languages_analysis_timeout: 15
-          plugin_languages_categories: 'markup, programming'
-          plugin_languages_colors: 'github'
+          plugin_languages_categories: "markup, programming"
+          plugin_languages_colors: "github"
           plugin_languages_indepth: false
           plugin_languages_limit: 8
           plugin_languages_other: false
-          plugin_languages_sections: 'most-used'
-          plugin_languages_threshold: '0%'
-      - name: 'Upload artifact'
-        uses: 'actions/upload-artifact@0b2256b8c012f0828dc542b3febcab082c67f72b'
+          plugin_languages_sections: "most-used"
+          plugin_languages_threshold: "0%"
+      - name: "Upload artifact"
+        uses: "actions/upload-artifact@0b2256b8c012f0828dc542b3febcab082c67f72b"
         with:
-          name: 'plugin-languages-metrics'
-          path: '/metrics_renders/'
+          name: "plugin-languages-metrics"
+          path: "/metrics_renders/"
           retention-days: 1
 
   generate-plugin-notable-metrics:
-    name: 'Generate notable contributions plugin metrics'
-    runs-on: 'ubuntu-latest'
+    name: "Generate notable contributions plugin metrics"
+    runs-on: "ubuntu-latest"
     permissions: {}
     steps:
-      - uses: 'lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6'
+      - uses: "lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6"
         with:
           # Core
           config_animations: true
           config_base64: true
-          config_padding: '0, 40'
-          config_display: 'regular'
-          config_output: 'svg'
-          config_timezone: 'UTC'
-          experimental_features: '--optimize-svg'
-          filename: 'plugin-notable.*'
-          optimize: 'css, xml, svg'
-          output_action: 'none'
-          template: 'classic'
-          token: '${{ secrets.METRICS_TOKEN }}'
-          user: '${{ github.repository_owner }}'
+          config_padding: "0, 40"
+          config_display: "regular"
+          config_output: "svg"
+          config_timezone: "UTC"
+          experimental_features: "--optimize-svg"
+          filename: "plugin-notable.*"
+          optimize: "css, xml, svg"
+          output_action: "none"
+          template: "classic"
+          token: "${{ secrets.METRICS_TOKEN }}"
+          user: "${{ github.repository_owner }}"
           # Base
-          base: ''
+          base: ""
           # Notable contributions plugin
           plugin_notable: true
-          plugin_notable_from: 'all'
+          plugin_notable_from: "all"
           plugin_notable_indepth: false
           plugin_notable_repositories: true
-          plugin_notable_types: 'commit'
-      - name: 'Upload artifact'
-        uses: 'actions/upload-artifact@0b2256b8c012f0828dc542b3febcab082c67f72b'
+          plugin_notable_types: "commit"
+      - name: "Upload artifact"
+        uses: "actions/upload-artifact@0b2256b8c012f0828dc542b3febcab082c67f72b"
         with:
-          name: 'plugin-notable-metrics'
-          path: '/metrics_renders/'
+          name: "plugin-notable-metrics"
+          path: "/metrics_renders/"
           retention-days: 1
 
   publish-metrics:
-    name: 'Publish metrics'
+    name: "Publish metrics"
     if: "github.event_name != 'pull_request'"
     needs:
-      - 'generate-header-metrics'
-      - 'generate-repositories-metrics'
-      - 'generate-plugin-achievements-metrics'
-      - 'generate-plugin-languages-metrics'
-      - 'generate-plugin-notable-metrics'
-    runs-on: 'ubuntu-latest'
+      - "generate-header-metrics"
+      - "generate-repositories-metrics"
+      - "generate-plugin-achievements-metrics"
+      - "generate-plugin-languages-metrics"
+      - "generate-plugin-notable-metrics"
+    runs-on: "ubuntu-latest"
     permissions:
-      contents: 'write'
+      contents: "write"
     steps:
-      - name: 'Checkout'
-        uses: 'actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332'
+      - name: "Checkout"
+        uses: "actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332"
         with:
-          ref: '${{ github.ref }}'
-      - name: 'Download header metrics artifact'
-        uses: 'actions/download-artifact@fa0a91b85d4f404e444e00e005971372dc801d16'
+          ref: "${{ github.ref }}"
+      - name: "Download header metrics artifact"
+        uses: "actions/download-artifact@fa0a91b85d4f404e444e00e005971372dc801d16"
         with:
-          name: 'header-metrics'
-          path: './metrics/'
-      - name: 'Download repositories metrics artifact'
-        uses: 'actions/download-artifact@fa0a91b85d4f404e444e00e005971372dc801d16'
+          name: "header-metrics"
+          path: "./metrics/"
+      - name: "Download repositories metrics artifact"
+        uses: "actions/download-artifact@fa0a91b85d4f404e444e00e005971372dc801d16"
         with:
-          name: 'repositories-metrics'
-          path: './metrics/'
-      - name: 'Download achievements plugin metrics artifact'
-        uses: 'actions/download-artifact@fa0a91b85d4f404e444e00e005971372dc801d16'
+          name: "repositories-metrics"
+          path: "./metrics/"
+      - name: "Download achievements plugin metrics artifact"
+        uses: "actions/download-artifact@fa0a91b85d4f404e444e00e005971372dc801d16"
         with:
-          name: 'plugin-achievements-metrics'
-          path: './metrics/'
-      - name: 'Download languages plugin metrics artifact'
-        uses: 'actions/download-artifact@fa0a91b85d4f404e444e00e005971372dc801d16'
+          name: "plugin-achievements-metrics"
+          path: "./metrics/"
+      - name: "Download languages plugin metrics artifact"
+        uses: "actions/download-artifact@fa0a91b85d4f404e444e00e005971372dc801d16"
         with:
-          name: 'plugin-languages-metrics'
-          path: './metrics/'
-      - name: 'Download notable contributions plugin metrics artifact'
-        uses: 'actions/download-artifact@fa0a91b85d4f404e444e00e005971372dc801d16'
+          name: "plugin-languages-metrics"
+          path: "./metrics/"
+      - name: "Download notable contributions plugin metrics artifact"
+        uses: "actions/download-artifact@fa0a91b85d4f404e444e00e005971372dc801d16"
         with:
-          name: 'plugin-notable-metrics'
-          path: './metrics/'
-      - name: 'Publish'
+          name: "plugin-notable-metrics"
+          path: "./metrics/"
+      - name: "Publish"
         run: |
           git config --global user.name 'hectorm-bot'
           git config --global user.email 'noreply@molinero.dev'
