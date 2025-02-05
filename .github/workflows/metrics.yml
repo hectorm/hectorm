@@ -43,7 +43,7 @@ jobs:
           # Base
           base: "header"
       - name: "Upload artifact"
-        uses: "actions/upload-artifact@6f51ac03b9356f520e9adb1b1b7802705f340c2b"
+        uses: "actions/upload-artifact@65c4c4a1ddee5b72f698fdd19549f0f0fb45cf08"
         with:
           name: "header-metrics"
           path: "/metrics_renders/"
@@ -75,7 +75,7 @@ jobs:
           repositories: 200
           repositories_forks: false
       - name: "Upload artifact"
-        uses: "actions/upload-artifact@6f51ac03b9356f520e9adb1b1b7802705f340c2b"
+        uses: "actions/upload-artifact@65c4c4a1ddee5b72f698fdd19549f0f0fb45cf08"
         with:
           name: "repositories-metrics"
           path: "/metrics_renders/"
@@ -110,7 +110,7 @@ jobs:
           plugin_achievements_secrets: true
           plugin_achievements_threshold: "B"
       - name: "Upload artifact"
-        uses: "actions/upload-artifact@6f51ac03b9356f520e9adb1b1b7802705f340c2b"
+        uses: "actions/upload-artifact@65c4c4a1ddee5b72f698fdd19549f0f0fb45cf08"
         with:
           name: "plugin-achievements-metrics"
           path: "/metrics_renders/"
@@ -150,7 +150,7 @@ jobs:
           plugin_languages_sections: "most-used"
           plugin_languages_threshold: "0%"
       - name: "Upload artifact"
-        uses: "actions/upload-artifact@6f51ac03b9356f520e9adb1b1b7802705f340c2b"
+        uses: "actions/upload-artifact@65c4c4a1ddee5b72f698fdd19549f0f0fb45cf08"
         with:
           name: "plugin-languages-metrics"
           path: "/metrics_renders/"
@@ -186,7 +186,7 @@ jobs:
           plugin_notable_repositories: true
           plugin_notable_types: "commit"
       - name: "Upload artifact"
-        uses: "actions/upload-artifact@6f51ac03b9356f520e9adb1b1b7802705f340c2b"
+        uses: "actions/upload-artifact@65c4c4a1ddee5b72f698fdd19549f0f0fb45cf08"
         with:
           name: "plugin-notable-metrics"
           path: "/metrics_renders/"
