@@ -43,7 +43,7 @@ jobs:
           # Base
           base: "header"
       - name: "Upload artifact"
-        uses: "actions/upload-artifact@4cec3d8aa04e39d1a68397de0c4cd6fb9dce8ec1"
+        uses: "actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02"
         with:
           name: "header-metrics"
           path: "/metrics_renders/"
@@ -75,7 +75,7 @@ jobs:
           repositories: 200
           repositories_forks: false
       - name: "Upload artifact"
-        uses: "actions/upload-artifact@4cec3d8aa04e39d1a68397de0c4cd6fb9dce8ec1"
+        uses: "actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02"
         with:
           name: "repositories-metrics"
           path: "/metrics_renders/"
@@ -110,7 +110,7 @@ jobs:
           plugin_achievements_secrets: true
           plugin_achievements_threshold: "B"
       - name: "Upload artifact"
-        uses: "actions/upload-artifact@4cec3d8aa04e39d1a68397de0c4cd6fb9dce8ec1"
+        uses: "actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02"
         with:
           name: "plugin-achievements-metrics"
           path: "/metrics_renders/"
@@ -150,7 +150,7 @@ jobs:
           plugin_languages_sections: "most-used"
           plugin_languages_threshold: "0%"
       - name: "Upload artifact"
-        uses: "actions/upload-artifact@4cec3d8aa04e39d1a68397de0c4cd6fb9dce8ec1"
+        uses: "actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02"
         with:
           name: "plugin-languages-metrics"
           path: "/metrics_renders/"
@@ -186,7 +186,7 @@ jobs:
           plugin_notable_repositories: true
           plugin_notable_types: "commit"
       - name: "Upload artifact"
-        uses: "actions/upload-artifact@4cec3d8aa04e39d1a68397de0c4cd6fb9dce8ec1"
+        uses: "actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02"
         with:
           name: "plugin-notable-metrics"
           path: "/metrics_renders/"
@@ -210,27 +210,27 @@ jobs:
         with:
           ref: "${{ github.ref }}"
       - name: "Download header metrics artifact"
-        uses: "actions/download-artifact@cc203385981b70ca67e1cc392babf9cc229d5806"
+        uses: "actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093"
         with:
           name: "header-metrics"
           path: "./metrics/"
       - name: "Download repositories metrics artifact"
-        uses: "actions/download-artifact@cc203385981b70ca67e1cc392babf9cc229d5806"
+        uses: "actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093"
         with:
           name: "repositories-metrics"
           path: "./metrics/"
       - name: "Download achievements plugin metrics artifact"
-        uses: "actions/download-artifact@cc203385981b70ca67e1cc392babf9cc229d5806"
+        uses: "actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093"
         with:
           name: "plugin-achievements-metrics"
           path: "./metrics/"
       - name: "Download languages plugin metrics artifact"
-        uses: "actions/download-artifact@cc203385981b70ca67e1cc392babf9cc229d5806"
+        uses: "actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093"
         with:
           name: "plugin-languages-metrics"
           path: "./metrics/"
       - name: "Download notable contributions plugin metrics artifact"
-        uses: "actions/download-artifact@cc203385981b70ca67e1cc392babf9cc229d5806"
+        uses: "actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093"
         with:
           name: "plugin-notable-metrics"
           path: "./metrics/"
