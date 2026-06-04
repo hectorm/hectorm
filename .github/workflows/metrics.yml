@@ -130,9 +130,7 @@ jobs:
     needs:
       - "generate-header-metrics"
       - "generate-repositories-metrics"
-      - "generate-plugin-achievements-metrics"
       - "generate-plugin-languages-metrics"
-      - "generate-plugin-notable-metrics"
     runs-on: "ubuntu-latest"
     permissions:
       contents: "write"
@@ -151,20 +149,10 @@ jobs:
         with:
           name: "repositories-metrics"
           path: "./metrics/"
-      - name: "Download achievements plugin metrics artifact"
-        uses: "actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c"
-        with:
-          name: "plugin-achievements-metrics"
-          path: "./metrics/"
       - name: "Download languages plugin metrics artifact"
         uses: "actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c"
         with:
           name: "plugin-languages-metrics"
-          path: "./metrics/"
-      - name: "Download notable contributions plugin metrics artifact"
-        uses: "actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c"
-        with:
-          name: "plugin-notable-metrics"
           path: "./metrics/"
       - name: "Publish"
         run: |
