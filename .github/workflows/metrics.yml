@@ -42,6 +42,7 @@ jobs:
           user: "${{ github.repository_owner }}"
           # Base
           base: "header"
+          repositories_batch: 20
       - name: "Upload artifact"
         uses: "actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a"
         with:
@@ -73,6 +74,7 @@ jobs:
           # Base
           base: "repositories"
           repositories: 200
+          repositories_batch: 20
           repositories_forks: false
       - name: "Upload artifact"
         uses: "actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a"
@@ -104,6 +106,7 @@ jobs:
           user: "${{ github.repository_owner }}"
           # Base
           base: ""
+          repositories_batch: 20
           # Achievements plugin
           plugin_achievements: true
           plugin_achievements_display: "compact"
@@ -139,6 +142,7 @@ jobs:
           user: "${{ github.repository_owner }}"
           # Base
           base: ""
+          repositories_batch: 20
           # Languages plugin
           plugin_languages: true
           plugin_languages_analysis_timeout: 15
@@ -179,6 +183,7 @@ jobs:
           user: "${{ github.repository_owner }}"
           # Base
           base: ""
+          repositories_batch: 20
           # Notable contributions plugin
           plugin_notable: true
           plugin_notable_from: "all"
